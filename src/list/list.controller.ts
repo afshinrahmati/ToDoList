@@ -79,11 +79,14 @@ export class ListController {
 //11111111 Post Login 1111111
 
     @Post('login')
+
     @ApiTags('LOGIN')
     @ApiHeader({ name: 'regeste',description: 'Name * Email * Pass',})
     @ApiResponse({ status: 201, description: 'The record has been successfully created.'})
     @ApiResponse({ status: 403, description: 'Forbidden.'})
     async  PostLogin(user:any) {
+      console.log("logiaan");
+      
       return  this.listService.PostLogin(user);
     };
 }
